@@ -1,0 +1,125 @@
+.wrapper {
+    margin: 80px;
+    height: 75vh;
+    display: flex;
+    border: 1px solid #707070;
+    border-radius: 15px;
+}
+
+.leftContainer {
+    background-image: url('C:\Users\revan\Downloads\login.png');
+    background-size: 80vh;
+    background-repeat: no-repeat;
+    min-height: 72vh;
+    width: 40vw;
+    float: left;
+    padding-right: 120px;
+}
+
+.rightContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    margin: auto;
+}
+
+.border {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 0px;
+    height: 50vh;
+    border-right: 1px solid #707070;
+}
+
+.cloudsideLogo {
+    background-image: url('C:\Users\revan\Downloads\cloudside-logo.svg');
+    background-repeat: no-repeat;
+    background-size: 14vh;
+    height: 8vh;
+    min-width: 9vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-bold {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 37px;
+    padding-top: 30px;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #707070;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+input {
+    height: 40px;
+    width: 400px;
+    background: #E9E8E8;
+    box-shadow: 0px 4px 10px rgba(22, 21, 21, 0.25);
+    border-radius: 10px;
+    text-indent: 60px;
+    border: none;
+}
+
+.username{
+    height: 80px;
+    margin: 10px 0px;
+}
+
+.password{
+    margin: 10px 0px;
+}
+
+.username-logo {
+    background-image: url('C:\Users\revan\Downloads\Group.png');
+    background-repeat: no-repeat;
+    background-size: 4%;
+    background-position: 25px;
+    min-width: 9vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.password-lock {
+    background-image: url('C:\Users\revan\Downloads\lock.png');
+    background-repeat: no-repeat;
+    background-size: 4%;
+    min-width: 9vw;
+    margin-left: auto;
+    background-position: 25px;
+    margin-right: auto;
+}
+
+.password-eye {
+    background-image: url('C:\Users\revan\Downloads\lock.png');
+    background-repeat: no-repeat;
+    background-size: 4%;
+    margin-left: auto;
+    background-position: -25px;
+    margin-right: auto;
+}
+
+.float-right {
+    text-align: right;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    background: #383E56;
+    border-radius: 10px;
+    font-weight: 500;
+    color: white;
+    border: none;
+}
+
+.textRed {
+    color: red;
+}
