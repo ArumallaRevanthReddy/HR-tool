@@ -3,22 +3,20 @@ import styles from './LaptopManagement.module.css';
 import { Table } from '../../components/table/Table';
 import { TopBar } from '../../components/top-bar/TopBar';
 import { NewLaptopPopup } from './popups/NewLaptopPopup/NewLaptopPopup';
-import { LaptopInfoPopup } from './popups/LaptopInfoPopup/LaptopInfoPopup';
-import { ConfirmationPopup } from './popups/ConfirmationPopup/ConfirmationPopup';
 
 export function LaptopManagement() {
     const columns = ['EMPLOYEE NAME', 'LAPTOP NAME', 'LAPTOP MODEL NO', 'LAPTOP STATUS', 'ACTIONS'];
     const laptopData = [
-        { employeeName: "Revanth", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "In Service", department: "development" },
-        { employeeName: "Dwarakesh", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "active", department: "development" },
-        { employeeName: "Revati", role: 'engineer', laptopName: "dell", model: "vostro", status: "active", department: "development" },
-        { employeeName: "Manoj", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "In Service", department: "development" },
-        { employeeName: "Samuel", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "active", department: "sales" },
-        { employeeName: "Chaitanya", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "active", department: "sales" },
-        { employeeName: "John", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "active", department: "HR" },
-        { employeeName: "Gigi", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "active", department: "HR" },
-        { employeeName: "Venkatesh", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "active", department: "data" },
-        { employeeName: "Praveen", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "active", department: "data" }
+        { employeeName: "Revanth", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "In Service", department: "development", email: "abc@gmail.com", serialNo: 234, hod: "2023-04-10", serviceDate:"2023-09-22", keyboard: false, charger: true, mouse: false },
+        { employeeName: "Dwarakesh", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "active", department: "development", email: "abc@gmail.com", serialNo: 234, hod: "2023-04-10", serviceDate:"2023-09-22", keyboard: false, charger: true, mouse: false },
+        { employeeName: "Revati", role: 'engineer', laptopName: "dell", model: "vostro", status: "active", department: "development", email: "abc@gmail.com", serialNo: 234, hod: "2023-04-10", serviceDate:"2023-09-22", keyboard: false, charger: true, mouse: false },
+        { employeeName: "Manoj", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "In Service", department: "development", email: "abc@gmail.com", serialNo: 234, hod: "2023-04-10", serviceDate:"2023-09-22", keyboard: false, charger: true, mouse: false },
+        { employeeName: "Samuel", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "active", department: "sales", email: "abc@gmail.com", serialNo: 234, hod: "2023-04-10", serviceDate:"2023-09-22", keyboard: false, charger: true, mouse: false },
+        { employeeName: "Chaitanya", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "active", department: "sales", email: "abc@gmail.com", serialNo: 234, hod: "2023-04-10", serviceDate:"2023-09-22", keyboard: false, charger: true, mouse: false },
+        { employeeName: "John", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "active", department: "HR", email: "abc@gmail.com", serialNo: 234, hod: "2023-04-10", serviceDate:"2023-09-22", keyboard: false, charger: true, mouse: false },
+        { employeeName: "Gigi", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "active", department: "HR", email: "abc@gmail.com", serialNo: 234, hod: "2023-04-10", serviceDate:"2023-09-22", keyboard: false, charger: true, mouse: false },
+        { employeeName: "Venkatesh", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "active", department: "data", email: "abc@gmail.com", serialNo: 234, hod: "2023-04-10", serviceDate:"2023-09-22", keyboard: false, charger: true, mouse: false },
+        { employeeName: "Praveen", role: 'engineer', laptopName: "Lenovo", model: "idea pad", status: "active", department: "data", email: "abc@gmail.com", serialNo: 234, hod: "2023-04-10", serviceDate:"2023-09-22", keyboard: false, charger: true, mouse: false }
     ];
     const departments = ['Data', 'Development', 'HR', 'Sales'];
     const brands = ['dell', 'lenovo'];

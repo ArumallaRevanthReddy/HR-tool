@@ -11,7 +11,7 @@ export function Modal2(props){
                 <ModalBody>
                     {props.children}
                 </ModalBody>
-                <ModalFooter buttons={props.modalData.buttons} setOpenModal={props.modalData.setOpenModal}/>
+                <ModalFooter buttons={props.modalData.buttons} setOpenModal={props.modalData.setOpenModal} submitHandler={props.modalData.submitHandler}/>
             </div>
         </div>
     )

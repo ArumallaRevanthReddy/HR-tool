@@ -1,5 +1,6 @@
 import { ConfirmationPopup } from '../../pages/laptop management/popups/ConfirmationPopup/ConfirmationPopup';
 import { LaptopInfoPopup } from '../../pages/laptop management/popups/LaptopInfoPopup/LaptopInfoPopup';
+import { EditLaptopPopup } from '../../pages/laptop management/popups/ModifyLaptopPopup/EditLaptopPopup';
 import styles from './Table.module.css'
 import { useState } from 'react';
 
@@ -18,28 +19,35 @@ export function Table(props) {
     const [isNextButtonDisabled, setIsNextButtonDisabled] = useState(currentPage === totalPages ? true : false);
 
     const previousButtonHandler = () => {
-        console.log('prev: ', currentPage)
-        if (!isPreviousButtonDisabled) setCurrentPage(currentPage - 1);
-        if (currentPage == 1) setIsPreviousButtonDisabled(true);
-        console.log('previous: ',isPreviousButtonDisabled, currentPage)
-        currentPage === totalPages-1 ? setIsNextButtonDisabled(true) : setIsNextButtonDisabled(false);
+        if (!isPreviousButtonDisabled) {
+            let page = currentPage;
+            page = currentPage - 1;
+            if (page === 1) setIsPreviousButtonDisabled(true);
+            currentPage === totalPages - 1 ? setIsNextButtonDisabled(true) : setIsNextButtonDisabled(false);
+            setCurrentPage(page);
+        }
+
     }
 
     const nextButtonHandler = () => {
-        console.log('next: ', currentPage)
-        if (!isNextButtonDisabled) setCurrentPage(currentPage + 1);
-        if (currentPage == totalPages) setIsNextButtonDisabled(true);
-        console.log('next: ',isNextButtonDisabled, currentPage)
-        currentPage === 1 ? setIsPreviousButtonDisabled(true) : setIsPreviousButtonDisabled(false);
+        if (!isNextButtonDisabled) {
+            let page = currentPage;
+            page = currentPage + 1;
+            if (page === totalPages) setIsNextButtonDisabled(true);
+            page === 1 ? setIsPreviousButtonDisabled(true) : setIsPreviousButtonDisabled(false);
+            setCurrentPage(page);
+        }
     }
 
     const [openLaptopInfoModal, setOpenLaptopInfoModal] = useState(false);
-    const laptopInfoHandler = () => {
+    const laptopInfoHandler = (index) => {
         setOpenLaptopInfoModal(true);
     }
 
     const [openEditLaptopModal, setOpenEditLaptopModal] = useState(false);
-    const editLaptopHandler = () => {
+    let [rowData, setRowData] = useState([]);
+    const editLaptopHandler = (index) => {
+        setRowData(currentPosts[index]);
         setOpenEditLaptopModal(true);
     }
 
@@ -50,18 +58,18 @@ export function Table(props) {
 
     return (
         <>
-            {openLaptopInfoModal && <LaptopInfoPopup setOpenModal={setOpenLaptopInfoModal}/>}
-            {openEditLaptopModal && <LaptopInfoPopup setOpenModal={setOpenEditLaptopModal}/>}
-            {openConfirmationModal && <ConfirmationPopup setOpenModal={setOpenConfirmationModal}/>}
+            {openLaptopInfoModal && <LaptopInfoPopup setOpenModal={setOpenLaptopInfoModal} />}
+            {openEditLaptopModal && <EditLaptopPopup setOpenModal={setOpenEditLaptopModal} rowData={rowData} />}
+            {openConfirmationModal && <ConfirmationPopup setOpenModal={setOpenConfirmationModal} />}
             <table>
                 <tr className={styles.checkbox}>
-                    {props.page === 'dashboard' && <th><input type='checkbox' className={styles.checkbox} /></th>}
+                    {/* {props.page === 'dashboard' && <th><input type='checkbox' className={styles.checkbox} /></th>} */}
                     {props.columns.map(column => { return <th>{column}</th> })}
                 </tr>
-                {props.page === "dashboard" ? currentPosts.map(row => {
+                {props.page === "dashboard" ? currentPosts.map((row, index) => {
                     return (
                         <tr>
-                            <td><input type='checkbox' className={styles.checkbox} /></td>
+                            {/* <td><input type='checkbox' className={styles.checkbox} /></td> */}
                             <td onClick={laptopInfoHandler}>
                                 <p className={styles.cell}>{row.employeeName}</p>
                                 <p className={styles.role}>{row.role}</p>
@@ -70,7 +78,7 @@ export function Table(props) {
                             <td className={styles.cell}>{row.model}</td>
                             <td className={row.status === 'active' ? `${styles.cell} ${styles.active}` : `${styles.cell} ${styles.inactive}`}>{row.status}</td>
                             <td className={styles.actions}>
-                                <span className={styles.edit} onClick={editLaptopHandler}></span>
+                                <span className={styles.edit} onClick={() => editLaptopHandler(index)}></span>
                                 <span className={styles.delete} onClick={deleteLaptopHandler}></span>
                             </td>
                         </tr>
@@ -80,7 +88,7 @@ export function Table(props) {
                         return (
                             <tr>
                                 {/* <td><input type='checkbox' className={styles.checkbox} /></td> */}
-                                <td className={styles.cell} style={{display: "flex", alignItems:"center"}}>
+                                <td className={styles.cell} style={{ display: "flex", alignItems: "center" }}>
                                     <span className={styles.dp}></span>
                                     <span>{row.employeeName}</span>
                                 </td>
