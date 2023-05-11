@@ -1,0 +1,21 @@
+.footer {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer button {
+    width: 150px;
+    height: 35px;
+    margin: 10px;
+    background: #383E56;
+    border-radius: 10px;
+    font-weight: 500;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.footer .close{
+    background: gray;
+}

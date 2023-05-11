@@ -1,6 +1,17 @@
-import './SideBar.css'
+import { useEffect, useState } from 'react';
+import './SideBar.css';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setSelectedPage } from '../../utils/store';
 
 export function SideBar() {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [selectedPage, setSelectedPage] = useState('dashboard');
+    useEffect( () => {
+        selectedPage === 'dashboard' ? navigate('/dashboard') : navigate('/wfh');
+    }, []);
+
     return (
         <div className="sideBar">
             <div className='dashboardLogo'></div>
@@ -21,14 +32,14 @@ export function SideBar() {
             </div>
             <div className='menu'>
                 <div className='header'>ORGANIZATION</div>
-                <div className='item select'>
+                <Link className='item select' to='/dashboard'>
                     <span className='laptop icon'></span>
                     <span>Laptop Management</span>
-                </div>
-                <div className='item'>
+                </Link>
+                <Link className='item' to='/wfh'>
                     <span className='icon wfh'></span>
                     <span>WFH Management</span>
-                </div>
+                </Link>
                 <div className='item'>
                     <span className='icon recruitment'></span>
                     <span>Recruitment</span>

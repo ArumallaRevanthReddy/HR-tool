@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import './login.css';
+import classes from './Login.module.css';
 import { ValidateEmail, validatePassword } from '../../utils/FormValidation';
 import { credentials } from '../../utils/data';
 import { useNavigate } from 'react-router';
@@ -31,25 +31,25 @@ export function Login() {
     }
 
     return (
-        <div className="wrapper">
-            <div className="leftContainer"></div>
-            <div className='border'></div>
-            <div className="rightContainer">
-                <div className="cloudsideLogo"></div>
-                <div className="text-bold">Welcome Back</div>
-                <div className="text">Login by entering the information below</div>
+        <div className={classes.wrapper}>
+            <div className={classes.leftContainer}></div>
+            <div className={classes.border}></div>
+            <div className={classes.rightContainer}>
+                <div className={classes.cloudsideLogo}></div>
+                <div className={classes.textBold}>Welcome Back</div>
+                <div className={classes.text}>Login by entering the information below</div>
                 <div>
                     <form onSubmit={loginHandler}>
-                        <div className='username'>
-                            <input type="text" id="title" required placeholder="User Name" className="username-logo" ref={enteredUsername} /><br />
-                            {!isValidUsername && <p className='textRed'>*Enter valid username</p>}
+                        <div className={classes.username}>
+                            <input type="text" id="title" required placeholder="User Name" className={`${classes.usernameLogo} ${classes.input}`} ref={enteredUsername} /><br />
+                            {!isValidUsername && <p className={classes.textRed}>*Enter valid username</p>}
                         </div>
                         <div className='password'>
-                            <input type="password" id="password" required placeholder="Password" className="password-lock" ref={enteredPassword} /><br />
-                            {!isValidCredentials && <p className='textRed'>*Enter valid credentials</p>}
+                            <input type="password" id="password" required placeholder="Password" className={`${classes.passwordLock} ${classes.input}`} ref={enteredPassword} /><br />
+                            {!isValidCredentials && <p className={classes.textRed}>*Enter valid credentials</p>}
                         </div>
                         <p className="float-right"><a>forgot password?</a></p><br />
-                        <button className={isValidCredentials ? "disabled" : null}>Login</button>
+                        <button className={!isValidCredentials ? `${classes.btn} ${classes.disabled}` : classes.btn}>Login</button>
                     </form>
                 </div>
             </div>
