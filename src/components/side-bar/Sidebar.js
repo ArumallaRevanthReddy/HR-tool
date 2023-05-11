@@ -32,11 +32,11 @@ export function SideBar() {
             </div>
             <div className='menu'>
                 <div className='header'>ORGANIZATION</div>
-                <Link className='item select' to='/dashboard'>
-                    <span className='laptop icon'></span>
+                <Link className={ selectedPage === 'dashboard' ? 'item select' : 'item'} onClick={() => setSelectedPage('dashboard')} to='/dashboard'>
+                    <span className='icon laptop'></span>
                     <span>Laptop Management</span>
                 </Link>
-                <Link className='item' to='/wfh'>
+                <Link className={ selectedPage === 'wfh' ? 'item select' : 'item'} to='/wfh' onClick={() => setSelectedPage('wfh')}>
                     <span className='icon wfh'></span>
                     <span>WFH Management</span>
                 </Link>
