@@ -1,0 +1,126 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #9d9d9d;
+  display: inline-block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.titleCloseBtn {
+  position: absolute;
+  left: 95%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.titleCloseBtn button {
+  background-color: transparent;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #9d9d9d;
+  margin: 10px;
+  background-color: #d9d9d9;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.modalContainer .footer button {
+  width: 250px;
+  height: 35px;
+  margin: 10px;
+  background: #383E56;
+  border-radius: 10px;
+  font-weight: 500;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin: 25px 30px;
+  /* justify-content: space-between; */
+}
+
+.textBox {
+  width: 340px;
+  height: 40px;
+  background: #F1F5F8;
+  border: 1px solid #D9D9D9;
+  border-radius: 15px;
+  margin: 5px 0px;
+  text-indent: 20px;
+  box-shadow: none;
+  padding-right: 10px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.flex {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  text-align: center;
+  margin-right: 120px;
+}
+
+.checkbox {
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.calender {
+  /* background-image: url('C:\Users\revan\Downloads\calender-icon.svg'); */
+  background-repeat: no-repeat;
+  background-size: 4%;
+  /* min-width: 9vw; */
+  margin-left: auto;
+  width: 150px;
+  background-position: 25px;
+  cursor: pointer;
+  color: #9D9D9D;
+  /* color-scheme: dark; */
+}
+
+.dropdown {
+  width: 160px;
+  height: 40px;
+  background: #F1F5F8;
+  border: 1px solid #D9D9D9;
+  border-radius: 15px;
+  margin: 5px 0px;
+  text-indent: 20px;
+  box-shadow: none;
+  padding-right: 10px;
+}
+
+.radio{
+  flex-direction: row;
+}

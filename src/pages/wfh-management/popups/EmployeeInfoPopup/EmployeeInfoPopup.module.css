@@ -1,0 +1,26 @@
+.body{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.cell{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 60px;
+}
+
+.title{
+    color: #9d9d9d;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.value{
+    margin: 10px 0px;
+}

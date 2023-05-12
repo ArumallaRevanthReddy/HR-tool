@@ -20,6 +20,7 @@ export function LaptopManagement() {
     ];
     const departments = ['Data', 'Development', 'HR', 'Sales'];
     const brands = ['dell', 'lenovo'];
+    const message = laptopData.length + " LAPTOPS AVAILABLE";
 
     const [openModal, setOpenModal] = useState(false);
     const [searchedData, setSearchedData] = useState(laptopData);
@@ -91,7 +92,7 @@ export function LaptopManagement() {
         <div >
             {openModal && <NewLaptopPopup setOpenModal={setOpenModal} />}
             <div className={styles.page}>
-                <TopBar page={selectedPage} />
+                <TopBar page={selectedPage} message={message} />
                 <div className={styles.toolbar}>
                     <span className={styles.toolbarLeft}>
                         <div className={styles.search}>

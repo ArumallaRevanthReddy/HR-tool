@@ -40,14 +40,14 @@ export function SideBar() {
                     <span className='icon wfh'></span>
                     <span>WFH Management</span>
                 </Link>
-                <div className='item'>
+                <Link className={ selectedPage === 'recruitment' ? 'item select' : 'item'} to='/recruitment' onClick={() => setSelectedPage('recruitment')}>
                     <span className='icon recruitment'></span>
                     <span>Recruitment</span>
-                </div>
-                <div className='item'>
+                </Link>
+                <Link className={ selectedPage === 'settings' ? 'item select' : 'item'} to='/settings' onClick={() => setSelectedPage('settings')}>
                     <span className='icon settings'></span>
                     <span>Settings</span>
-                </div>
+                </Link>
             </div>
             <div className='logoutMenu'>
                 <div className='item'>
