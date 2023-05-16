@@ -1,10 +1,24 @@
 import styles from './JobCard.module.css';
+import { useState } from 'react';
+import { NewCandidate } from '../../popups/NewCandidate/NewCandidate';
+import { useNavigate } from 'react-router';
 
 export function JobCard({ jobInfo }) {
+    const navigate = useNavigate();
+    const [openModal, setOpenModal] = useState(false);
+    const openModalHandler = () => {
+        setOpenModal(true);
+    }
+
+    const applicantsHandler = (role) => {
+        navigate('/recruitment/applicants');
+    }
+
     return (
         <div className={styles.jobCard}>
+            {openModal && <NewCandidate setOpenModal={setOpenModal} />}
             <div className={styles.innerContainer}>
-                <div className={styles.flex}>
+                <div className={styles.flex} onClick={applicantsHandler(jobInfo.role)}>
                     <span>{jobInfo.jobTitle}</span>
                     <span className={`${styles.icon} ${styles.edit}`}></span>
                 </div>
@@ -22,7 +36,7 @@ export function JobCard({ jobInfo }) {
                 <span className={styles.countValue}>{jobInfo.applicantsCount}</span>
                 <div className={styles.flex}>
                     <span className={styles.textSmall}>applicants</span>
-                    <span className={`${styles.flex} ${styles.pointer}`}>
+                    <span className={`${styles.flex} ${styles.pointer}`} onClick={openModalHandler}>
                         <span className={styles.applyText}>Apply</span>
                         <span className={`${styles.icon} ${styles.apply}`}></span>
                     </span>

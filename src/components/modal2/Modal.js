@@ -6,7 +6,7 @@ import modalClasses from './Modal.module.css';
 export function Modal2(props){
     return(
         <div className={modalClasses.modalBackground}>
-            <div className={props.modalData.size === "small" ?  modalClasses.modalContainerSmall : modalClasses.modalContainer}>
+            <div className={props.modalData.size === "small" ?  `${modalClasses.modalContainerSmall} ${modalClasses.modalContainer}` : props.modalData.size === "large" ? `${modalClasses.modalContainerLarge} ${modalClasses.modalContainer}` : modalClasses.modalContainer}>
                 <ModalHeader setOpenModal={props.modalData.setOpenModal} title={props.modalData.title} />
                 <ModalBody>
                     {props.children}

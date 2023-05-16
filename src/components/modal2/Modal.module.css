@@ -5,41 +5,27 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(128, 128, 128, 0.5);
-  }
-  
-  .modalContainer {
+}
+
+.modalContainer {
     display: flex;
     flex-direction: column;
     z-index: 10;
     position: fixed;
-    /* positioning in center of page */
     top: 50vh;
     left: 50vw;
     transform: translate(-50%, -50%);
     height: 550px;
-    /* size */
-    width: 800px;
+    width: 850px;
     border-radius: 10px;
     color: #9D9D9D;
     background-color: white;
-    /* background color */
-  }
+}
 
-  .modalContainerSmall {
-    display: flex;
-    flex-direction: column;
-    z-index: 10;
-    position: fixed;
-    /* positioning in center of page */
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
+.modalContainerSmall {
     height: 200px;
-    /* size */
-    width: 800px;
-    border-radius: 10px;
-    color: #9D9D9D;
-    background-color: white;
-    /* background color */
-  }
-  
+}
+
+.modalContainerLarge {
+    height: 680px;
+}

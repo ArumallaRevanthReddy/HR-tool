@@ -53,20 +53,20 @@ export function Recruitment() {
                     </div>
                 </div>
                 <div className={styles.jobCardsContainer}>
-                    {/* <div className={styles.row}> */}
-                    <JobCard jobInfo={jobInfo} />
-                    <JobCard jobInfo={jobInfo} />
-                    <JobCard jobInfo={jobInfo} />
-                    {/* </div> */}
-                    {/* <div className={styles.row}> */}
-                    <JobCard jobInfo={jobInfo} />
-                    <JobCard jobInfo={jobInfo} />
-                    <JobCard jobInfo={jobInfo} />
-                    {/* </div> */}
+                    <div className={styles.row}>
+                        <JobCard jobInfo={jobInfo}/>
+                        <JobCard jobInfo={jobInfo}/>
+                        <JobCard jobInfo={jobInfo}/>
+                    </div>
+                    <div className={styles.row}>
+                        <JobCard jobInfo={jobInfo}/>
+                        <JobCard jobInfo={jobInfo}/>
+                        <JobCard jobInfo={jobInfo}/>
+                    </div>
                 </div>
+                <div className={styles.pagination}>
+                <Pagination currentPage={1} totalPosts={15} postsPerPage={6} />
             </div>
-            <div className={styles.pagination}>
-                <Pagination currentPage={1} totalPosts={15} postsPerPage={6}/>
             </div>
         </section>
     )

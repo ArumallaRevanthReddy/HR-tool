@@ -113,6 +113,7 @@
 
 .countBar{
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     padding: 20px 30px;
 }
@@ -170,7 +171,7 @@
 }
 
 .pagination{
-    position: absolute;
-    bottom: 15px;
-    right: 50px;
+    /* position: absolute; */
+    /* bottom: 15px; */
+    /* right: 50px; */
 }
